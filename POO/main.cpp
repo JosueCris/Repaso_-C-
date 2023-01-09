@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
     cout << "Nombre: " << name << endl;
     cout << "Apellido: " << lastname << endl;
     cout << "Promedio: " << average << endl;
-    cout << "\n------------------------" << endl;
+    cout << "\n-------------------" << endl;
 
     //  Actualizando promedio.
     est1->set_promedio(8.2);
