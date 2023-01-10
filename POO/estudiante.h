@@ -92,5 +92,5 @@ string Estudiante :: to_string()
             "\nNombre: "  + nombre +
             "\nApellido: " + apellido +
             "\nPromedio: " + std::to_string(promedio) +
-            "\n-------------------------";
+            "\n--------------------\n";
 }
