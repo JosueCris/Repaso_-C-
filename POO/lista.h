@@ -9,6 +9,12 @@ struct Nodo
 
 typedef struct Nodo Lista;
 
+void menu()
+{
+	cout << "Select your option to choice from the linked list: \n\t";
+	cout << "[1]: Insert\n\t[2]: Show\n\t[3]: Search\n\t[4]: Delete\n\t[0]: Exit\n> ";
+}
+
 int add(Lista **inicio, Estudiante *est)
 {
     Lista *nuevo = (Lista *) malloc(sizeof(Lista));

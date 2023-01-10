@@ -84,7 +84,7 @@ float Estudiante :: get_promedio()
 /*
     No confundir el nombre de mi metodo to_string con el de la funcion para convertir a cualquier tipo de dato a 
     cadena, no tenia conocimiento de la existencia de esa funcion. Conservo el nombre del metodo como convencion
-    de que asi se llama en el lengiaje Java.
+    de que asi se llama en el lenguaje Java.
 */ 
 string Estudiante :: to_string()
 {

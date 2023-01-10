@@ -3,26 +3,73 @@
 int main(int argc, char const *argv[])
 {
     Lista *lista = NULL;
+    Lista *buscado = NULL;
+    Estudiante *est = NULL;
+    int op;
+    string enrollment, name, lastname;
+    float average;
 
-    Estudiante *est1 = new Estudiante("S18001462", "Josue", "Tellez", 8.02);
-    Estudiante *est2 = new Estudiante("S18001417", "Victor", "Cartas", 7.2);
-    Estudiante *est3 = new Estudiante("S18021147", "Cristian", "Vega", 6.9);
+    do
+	{
+		menu();
+		cin >> op;
 
-    add(&lista, est1);
-    add(&lista, est2);
-    add(&lista, est3);
+		switch(op)
+		{
+			case 1:
+				cout << "\nIngresa tu matricula: ";
+                cin >> enrollment;
+                cout << "Ingresa tu nombre: ";
+                cin >> name;
+                cout << "Ingresa tu apellido: ";
+                cin >> lastname;
+                cout << "Ingresa tu promedio: ";
+                cin >> average;
 
-    seek(lista);
+                est = new Estudiante(enrollment, name, lastname, average);
+				if(add(&lista, est))
+                    cout << "\nAgregado a la lista !!!" << endl;
+                else
+                    cout << "\nNo se pudo agregar :(" << endl;
+                system("cls || clear");
+			    break;
 
-    Lista *buscado = search(lista, "S18001414");
-    if(buscado)
-        cout << "Encontrado:" << endl << buscado->datos->to_string();
-    else    
-        cout << "No se encuentra :(" << endl;
+			case 2:
+				cout << "\nLISTA DE ESTUDIANTES" << endl;
+                cout <<"--------------------\n";
+				seek(lista);
+				cout << "\n";
+				break;		
+			
+			case 3: 
+				cout << "\nIngresa la matricula del estudiante a buscar: ";
+                cin >>  enrollment;
+				buscado = search(lista, enrollment);
+                if(buscado)
+                    cout << "\nEncontrado:" << endl << buscado->datos->to_string() <<endl;
+                else    
+                    cout << "\nNo se encuentra :(" << endl;
+                break;
 
-    
-    drop(&lista, "S18001417");
-    seek(lista);
+			case 4:
+				cout << "\nIngresa la matricula del estudiante a eliminar: ";
+                cin >>  enrollment;
+				if (drop(&lista, enrollment))
+					cout << "Se ha eliminado correctamente !!!" << endl << endl;
+				else
+					cout << "No se pudo eliminar :( !!!" << endl << endl;
+				break;
+
+			case 0:
+				cout << "\nHasta luego :D" << endl;
+				return 0;
+				break;	
+
+			default:
+				cout << "\nIntentalo de nuevo !!!" << endl;
+				break;	
+		}
+	}while(op != 0);
 
     return 0;
 }
