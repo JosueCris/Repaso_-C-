@@ -1,13 +1,16 @@
 #include "figura.h"
 
+//  Indicamos que Rectangulo esta extendiendo a la clase Figura
 class Rectangulo : public Figura
 {
 private:
     /* data */
 public:
     //  Declaracion del constructor de la clase hija que tambien hereda el de la padre.
-    Rectangulo(string _nombre, int _lados, int _base, int _altura) : Figura(_nombre, _lados, _base, _altura)
+    Rectangulo(string _nombre, int _lados, int _base, int _altura) : 
+    Figura(_nombre, _lados, _base, _altura)
     {
+        
     };
 
     //  Declaramos el/los metodo(s) de la clase hija.
