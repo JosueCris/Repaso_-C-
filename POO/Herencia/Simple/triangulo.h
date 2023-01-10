@@ -34,6 +34,7 @@ public:
     }
 };
 
+//  Desarrollamos el metodo de la clase local.
 void Triangulo :: set_lado1(int _lado1)
 {
     this->lado1 = _lado1;
@@ -54,7 +55,6 @@ int Triangulo :: get_lado2()
     return lado2;
 }
 
-//  Desarrollamos el metodo de la clase local.
 string Triangulo :: to_string()
 {
     return Figura :: to_string() +
