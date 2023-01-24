@@ -43,6 +43,6 @@ string Profesor :: get_materia()
 
 string Profesor :: to_string()
 {
-    return "Nombre: "  +  nombre+
+    return "Nombre: "  +  nombre +
             "\nMateria: " + materia;
 }
